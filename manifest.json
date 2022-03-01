@@ -1,0 +1,17 @@
+{
+  "short_name": "Shakku's Bday",
+  "name": "Happy Birthday Aswani",
+  "icons": [
+    {
+      "src": "img/us.jpg",
+      "type": "image/jpg",
+      "sizes": "791x791"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#FF0000",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#FF0000",
+  "description": "To wish aswani a happy birthday..."
+}

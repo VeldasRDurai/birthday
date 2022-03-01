@@ -1,5 +1,8 @@
 // Run when the webpage is loaded
+let thisYearBday = new Date(`03-18-${new Date().getFullYear()}`); 
+
 window.addEventListener('load', () => {
+  if(!sameDate( thisYearBday )){ return } 
   Swal.fire({
     title: 'Are you sure to play music in background?',
     // text: "You won't be able to revert this!",
@@ -14,6 +17,13 @@ window.addEventListener('load', () => {
     animationTimeline();
   })
 })
+
+const sameDate = ( date1, date2= new Date() ) => 
+  (date1.getDate() === date2.getDate() && 
+    date1.getMonth() === date2.getMonth() &&
+      date1.getFullYear() === date2.getFullYear()) ? 
+        false : true;
+        // true : false;
 
 // Animation Timeline
 const animationTimeline = () => {
@@ -217,7 +227,7 @@ const animationTimeline = () => {
       }, {
         scale: 1,
         rotationY: 0,
-        color: "#ff69b4",
+        color: "#fff",
         ease: Expo.easeOut,
       },
       0.1,
@@ -263,3 +273,20 @@ const animationTimeline = () => {
     tl.restart();
   });
 };
+
+// let deferredPrompt;
+
+// window.addEventListener('beforeinstallprompt', (e) => {
+//   e.preventDefault();
+//   deferredPrompt = e;
+//   showInstallPromotion();  
+//   console.log(`'beforeinstallprompt' event was fired.`);
+// });
+
+// buttonInstall.addEventListener('click', async () => {
+//   hideInstallPromotion();
+//   deferredPrompt.prompt();
+//   const { outcome } = await deferredPrompt.userChoice;
+//   console.log(`User response to the install prompt: ${outcome}`);
+//   deferredPrompt = null;
+// });
